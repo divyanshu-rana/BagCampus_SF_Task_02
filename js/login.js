@@ -46,11 +46,11 @@ loginForm.addEventListener("submit", async (e) => {
     const user = userArray.filter(
       (user) => user.email === formDataObject.loginEmail
     )[0];
-    localStorage.setItem(
-      "userData",
-      JSON.stringify({ name: user.name, email: user.email })
-    );
     if (user) {
+      localStorage.setItem(
+        "userData",
+        JSON.stringify({ name: user.name, email: user.email })
+      );
       if (user.password === formDataObject.loginPassword) {
         loginSuccessNotification.classList.remove("hide");
         setTimeout(() => {
