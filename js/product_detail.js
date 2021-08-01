@@ -4,6 +4,7 @@ const itemName = document.querySelector(".item_name");
 const discription = document.querySelector(".desc");
 const priceContainer = document.querySelector(".price-container");
 const cartBtn = document.querySelector(".cart_btn");
+const BuyBtn = document.querySelector(".buy_btn");
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 document.querySelector(".cart-count").innerText = cart.length;
 let subImages;
@@ -69,3 +70,5 @@ const fetchData = async () => {
 window.onload = async () => {
   await fetchData();
 };
+
+BuyBtn.addEventListener("click", (e) => alert("Order Placed Successfully"));
